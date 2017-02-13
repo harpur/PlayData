@@ -66,6 +66,9 @@ for(i in c(2013:2016)){
 	ppl.gender = ppl.gender[!duplicated(ppl.gender$name),]
 
 
+	#extract awards --------------------
+	awards = txt.vector[txt.awards]
+
 	#create df ------------------------
 	nserc.gender = data.frame(cbind(name = ppl.first, award = awards) )
 	nserc.gender = merge(nserc.gender, ppl.gender, by = "name")
