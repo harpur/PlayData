@@ -3,10 +3,13 @@
 ###
 
 
-#These 2 functions simulate the correlation coefficient and p-value for N simulations of 2 sets of independant data 
-#they restrict the correlation to only the top 95% of the data
-#the first function (indep.cut.corr) is for 2 normally-distributed data sets. 
-#the second function (correlated.cut.cor) is for 2 ndata sets that are  correlated with a coefficient provided
+#These 2 functions simulate the correlation coefficient and p-value for N 
+#simulations of 2 sets of independant data. They restrict the correlation 
+#to only the top 95% of the data of one of the 2 variables against the corresponding 
+#variables in the other dataset. the first function (indep.cut.corr) is 
+#for 2 normally-distributed data sets. 
+#the second function (correlated.cut.cor) is for 2 
+#data sets that are  correlated with a coefficient provided
 
 
 #required libraries ----
