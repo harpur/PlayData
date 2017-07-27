@@ -20,6 +20,13 @@ require(ggplot2)
 #Define Data -------------------- 
 awards.list = c("CGSD2","CGSD3", "PGSD2", "PGSD3", "PDF") #this is list of awards through NSERC
 nserc.all.summary = read.table('NSERC_Grad_Gender', header = T)
+#nserc.all.summary =nserc.all.summary[nserc.all.summary$award %in% c("PGSD3","CGSD3","PDF"),]
+
+#correlation model--------------
+x = aov(nserc.all.summary$prop~nserc.all.summary$rank*nserc.all.summary$year)
+summary(x)
+x = glm(nserc.all.summary$prop~nserc.all.summary$rank)
+
 
 
 
@@ -31,7 +38,7 @@ p <- ggplot(nserc.all.summary, aes(x = rank, y = prop, size = year)) +
 		scale_radius() +
 		ylab("Proportion Male") +
 		scale_x_continuous(breaks =  c(1:5), labels = awards.list) +
-		geom_abline(intercept = 0.56509251, slope = 0.02361349, size = 1.1) + #from correlation model
+		geom_abline(intercept = coef(x)[1], slope =coef(x)[2] , size = 1.1) + #from correlation model
 		theme(
 			axis.title.x = element_blank(),
 			axis.text.x = element_text(size = 12,color="black"),
