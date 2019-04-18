@@ -55,7 +55,7 @@ p <- ggplot(nserc.all.summary, aes(x = rank, y = prop, size = year)) +
 
 		) 
 
-ggsave(p, file = "NSERC.png", height = 4, width = 4.5)
+ggsave(p, file = "NSERC.png", height = 5, width = 5)
 
 
 
