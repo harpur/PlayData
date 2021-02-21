@@ -107,19 +107,21 @@ cdbyank -a NW_023548001.1 GCF_014825515.1_WHU_Ajam_v2_genomic.fna.cidx #mrjp1
 
 
 
+I thought I'd check the whole genome to see if this was a general problem. I blasted Apis mellifera genome (NCBI) against the Jamaican bat. Many more honey bee genes show up. Most are in single scaffolds (eg. Vg below)
 
 
 
-blastn  -query /depot/bharpur/data/ref_genomes/AMEL/GCF_003254395.2_Amel_HAv3.1_rna.fna -subject GCF_014825515.1_WHU_Ajam_v2_genomic.fna -evalue 1e-30 -outfmt 6 > bimpConstRNA
+```
+blastn  -query GCF_003254395.2_Amel_HAv3.1_rna.fna -subject GCF_014825515.1_WHU_Ajam_v2_genomic.fna -evalue 1e-30 -outfmt 6 > bimpConstRNA
+
+
+cdbyank -a NW_023575136.1 GCF_014825515.1_WHU_Ajam_v2_genomic.fna.cidx #Vg
+
+```
 
 
 
-
-
-
-
-
-
+There is at least two cases (NW_023538398.1; NW_023578212.1) of a long-ish (>13Kb) scaffold mapping to mulitple honey bee genes. 
 
 
 
