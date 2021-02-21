@@ -16,8 +16,10 @@ blastn  -query mrjp3.fas  -subject GCF_014825515.1_WHU_Ajam_v2_genomic.fna -eval
 cdbfasta GCF_014825515.1_WHU_Ajam_v2_genomic.fna
 ```
 
-The results can be found in the BLAST output file called 'bimpConst'. Throughout all the analysis below, when I say 'match' I mean e-value of 0 and a full-lenght alignment. I used 1e-10  but really only looked at cases where the evalue approached 0.There are three scaffolds that match to MRJP3. I extracted those scaffolds (below) using cdbtools. They have blast mathces to MRJP1,2, and 3 from Apis cerana. Funky. I go through a few more cases below. Vg and many more honey bee genes show up in the bat genome with near 100% identity to honey bee genes. Most of the cases I found are restricted to single scaffolds. There are at least two cases (NW_023538398.1; NW_023578212.1) where a long-ish (>13Kb) scaffold maps to mulitple honey bee genes and bat genes. For example, XM_037159202.1 (PRDM-9) is on NW_023578212.1 and honey bees don't have this gene. 
+The results can be found in the BLAST output file called 'bimpConst'. Throughout all the analysis below, when I say 'match' I mean e-value of 0 and a full-lenght alignment. I used 1e-10  but really only looked at cases where the evalue approached 0.There are three scaffolds that match to MRJP3. I extracted those scaffolds ( see below) using cdbtools. They have blast matches to MRJP1,2, and 3. Funky. 
 
+
+The MRJPs aren't the only ones. Vg and many more honey bee genes show up in the bat genome with near 100% identity to honey bee genes. Most of the cases I found are restricted to single scaffolds. There are at least two cases (NW_023538398.1; NW_023578212.1) where a long-ish (>13Kb) scaffold maps to mulitple honey bee genes and bat genes. XM_037159202.1 (PRDM-9, a gene honey bees lack) is on NW_023578212.1 and so is honey bee tubulin-1 (XM_392313.7).
 
 
 Blast output for MRJP3 against the bat genome. 
@@ -124,7 +126,7 @@ I thought I'd check the whole genome to see if this was a general problem. I bla
 
 
 ```
-blastn  -query GCF_003254395.2_Amel_HAv3.1_rna.fna -subject GCF_014825515.1_WHU_Ajam_v2_genomic.fna -evalue 1e-30 -outfmt 6 > bimpConstRNA
+blastn  -query GCF_003254395.2_Amel_HAv3.1_rna.fna -subject GCF_014825515.1_WHU_Ajam_v2_genomic.fna -evalue 1e-30 -outfmt 6 > AMELCDS_vs_AJAM
 
 
 cdbyank -a NW_023575136.1 GCF_014825515.1_WHU_Ajam_v2_genomic.fna.cidx #Vg
