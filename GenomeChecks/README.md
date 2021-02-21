@@ -16,7 +16,18 @@ blastn  -query mrjp3.fas  -subject GCF_014825515.1_WHU_Ajam_v2_genomic.fna -eval
 cdbfasta GCF_014825515.1_WHU_Ajam_v2_genomic.fna
 ```
 
-The results can be found in the BLAST output file called 'bimpConst'. There are three scaffolds that match to MRJP3. I extracted those scaffolds (below) using cdbtools. They have blast mathces to MRJP1,2, and 3 from Apis cerana. Funky. I go through a few more cases below. Vg and many more honey bee genes show up in the bat genome with near 100% identity to honey bee genes. Most of the cases I found are restricted to single scaffolds. There are at least two cases (NW_023538398.1; NW_023578212.1) where a long-ish (>13Kb) scaffold maps to mulitple honey bee genes and bat genes. For example, XM_037159202.1 (PRDM-9) is on NW_023578212.1 and honey bees don't have this gene. 
+The results can be found in the BLAST output file called 'bimpConst'. Throughout all the analysis below, when I say 'match' I mean e-value of 0 and a full-lenght alignment. I used 1e-10  but really only looked at cases where the evalue approached 0.There are three scaffolds that match to MRJP3. I extracted those scaffolds (below) using cdbtools. They have blast mathces to MRJP1,2, and 3 from Apis cerana. Funky. I go through a few more cases below. Vg and many more honey bee genes show up in the bat genome with near 100% identity to honey bee genes. Most of the cases I found are restricted to single scaffolds. There are at least two cases (NW_023538398.1; NW_023578212.1) where a long-ish (>13Kb) scaffold maps to mulitple honey bee genes and bat genes. For example, XM_037159202.1 (PRDM-9) is on NW_023578212.1 and honey bees don't have this gene. 
+
+
+
+Blast output for MRJP3 against the bat genome. 
+```
+NM_001011601.1	NW_023536703.1	93.830	940	58	0	1	940	2	941	0.0	1415
+NM_001011601.1	NW_023536703.1	93.341	826	52	1	533	1358	945	1767	0.0	1218
+NM_001011601.1	NW_023577697.1	80.681	1439	244	19	23	1453	1413	1	0.0	1086
+NM_001011601.1	NW_023548001.1	78.929	878	166	12	432	1295	1006	134	1.84e-162	579
+NM_001011601.1	NW_023548001.1	79.503	805	137	16	26	819	1800	1013	5.20e-153	547
+```
 
 
 
