@@ -16,7 +16,7 @@ blastn  -query mrjp3.fas  -subject GCF_014825515.1_WHU_Ajam_v2_genomic.fna -eval
 cdbfasta GCF_014825515.1_WHU_Ajam_v2_genomic.fna
 ```
 
-The results can be found in the BLAST output file called 'bimpConst'. There are three scaffolds that match to MRJP3. I extracted those scaffolds (below) using cdbtools. They have blast mathces to MRJP1,2, and 3 from Apis cerana. Funky! 
+The results can be found in the BLAST output file called 'bimpConst'. There are three scaffolds that match to MRJP3. I extracted those scaffolds (below) using cdbtools. They have blast mathces to MRJP1,2, and 3 from Apis cerana. Funky. 
 
 
 ```
