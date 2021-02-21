@@ -16,7 +16,8 @@ blastn  -query mrjp3.fas  -subject GCF_014825515.1_WHU_Ajam_v2_genomic.fna -eval
 cdbfasta GCF_014825515.1_WHU_Ajam_v2_genomic.fna
 ```
 
-The results can be found in the BLAST output file called 'bimpConst'. There are three scaffolds that match to MRJP3. I extracted those scaffolds (below) using cdbtools. They have blast mathces to MRJP1,2, and 3 from Apis cerana. Funky. 
+The results can be found in the BLAST output file called 'bimpConst'. There are three scaffolds that match to MRJP3. I extracted those scaffolds (below) using cdbtools. They have blast mathces to MRJP1,2, and 3 from Apis cerana. Funky. I go through a few more cases below. Vg and many more honey bee genes show up in the bat genome with near 100% identity to honey bee genes. Most of the cases I found are restricted to single scaffolds. There are at least two cases (NW_023538398.1; NW_023578212.1) where a long-ish (>13Kb) scaffold maps to mulitple honey bee genes and bat genes. For example, XM_037159202.1 (PRDM-9) is on NW_023578212.1 and honey bees don't have this gene. 
+
 
 
 ```
@@ -107,7 +108,7 @@ cdbyank -a NW_023548001.1 GCF_014825515.1_WHU_Ajam_v2_genomic.fna.cidx #mrjp1
 
 
 
-I thought I'd check the whole genome to see if this was a general problem. I blasted Apis mellifera genome (NCBI) against the Jamaican bat. Many more honey bee genes show up. Most are in single scaffolds (eg. Vg below)
+I thought I'd check the whole genome to see if this was a general problem. I blasted Apis mellifera genome (NCBI) against the Jamaican bat. Many more honey bee genes show up. Most are in single scaffolds (eg. Vg below). 
 
 
 
@@ -121,7 +122,25 @@ cdbyank -a NW_023575136.1 GCF_014825515.1_WHU_Ajam_v2_genomic.fna.cidx #Vg
 
 
 
-There is at least two cases (NW_023538398.1; NW_023578212.1) of a long-ish (>13Kb) scaffold mapping to mulitple honey bee genes. 
+Additional, random checks of NW_023578212.1 against the bat transcripts to check if honey bee genes and bat genes have been inter-mixed. 
+
+```
+makeblastdb -in GCF_014825515.1_WHU_Ajam_v2_rna.fna -parse_seqids -dbtype nucl
+blastn  -query long2.fas -subject GCF_014825515.1_WHU_Ajam_v2_rna.fna -evalue 1e-30 -outfmt 6 > bimpConstRNA
+blastn  -query long2.fas -subject GCF_014825515.1_WHU_Ajam_v2_rna.fna -evalue 1e-30 -outfmt 6 > bimpConstRNA
+
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
