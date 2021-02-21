@@ -6,7 +6,6 @@ Spotted something weird while running a BLAST on MRJP3. It was in a bat genome. 
 
 
 ```
-{
 module load bioinfo
 module load blast
 module load cdbtools
@@ -15,15 +14,12 @@ gunzip GCF_014825515.1_WHU_Ajam_v2_genomic.fna.gz
 makeblastdb -in GCF_014825515.1_WHU_Ajam_v2_genomic.fna -parse_seqids -dbtype nucl
 blastn  -query mrjp3.fas  -subject GCF_014825515.1_WHU_Ajam_v2_genomic.fna -evalue 1e-10 -outfmt 6 > bimpConst
 cdbfasta GCF_014825515.1_WHU_Ajam_v2_genomic.fna
-
-}
 ```
 
 The results can be found in the BLAST output file called 'bimpConst'. There are three scaffolds that match to MRJP3. I extracted those scaffolds (below) using cdbtools. They have blast mathces to MRJP1,2, and 3 from Apis cerana. Funky! 
 
 
 ```
-{
 cdbyank -a NW_023536703.1 GCF_014825515.1_WHU_Ajam_v2_genomic.fna.cidx #mrjp3
 
 #	>NW_023536703.1 Artibeus jamaicensis isolate 1a unplaced genomic scaffold, WHU_Ajam_v2 original_#	scaffold_24219, whole genome shotgun sequence
@@ -107,7 +103,6 @@ cdbyank -a NW_023548001.1 GCF_014825515.1_WHU_Ajam_v2_genomic.fna.cidx #mrjp1
 #	GGCATACCACCATAAACAACCACCTTGTCATTTTTCTAGGCTGCGAGTAACGAAGCAATGGATATTGTACGTGAA
 
 
-}
 ```
 
 
