@@ -16,7 +16,7 @@ blastn  -query mrjp3.fas  -subject GCF_014825515.1_WHU_Ajam_v2_genomic.fna -eval
 cdbfasta GCF_014825515.1_WHU_Ajam_v2_genomic.fna
 ```
 
-The results can be found in the BLAST output file called 'bimpConst'. Throughout all the analysis below, when I say 'match' I mean e-value of 0 and a full-lenght alignment. I used 1e-10  but really only looked at cases where the evalue approached 0.There are three scaffolds that match to MRJP3. I extracted those scaffolds ( see below) using cdbtools. They have blast matches to MRJP1,2, and 3. Funky. 
+The results can be found in the BLAST output file called 'bimpConst'. Throughout all the analysis below, when I say 'match' I mean e-value of 0 and a full-length alignment. I used 1e-10  but really only looked at cases where the evalue approached 0.There are three scaffolds that match to MRJP3. I extracted those scaffolds ( see below) using cdbtools. They have blast matches to MRJP1,2, and 3. Funky. 
 
 
 The MRJPs aren't the only ones. Vg and many more honey bee genes show up in the bat genome with near 100% identity to honey bee genes. Most of the cases I found are restricted to single scaffolds. There are at least two cases (NW_023538398.1; NW_023578212.1) where a long-ish (>13Kb) scaffold maps to mulitple honey bee genes and bat genes. XM_037159202.1 (PRDM-9, a gene honey bees lack) is on NW_023578212.1 and so is honey bee tubulin-1 (XM_392313.7).
