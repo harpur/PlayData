@@ -32,7 +32,7 @@ NM_001011601.1	NW_023548001.1	79.503	805	137	16	26	819	1800	1013	5.20e-153	547
 ```
 
 
-I extract some of the results below. I also compared MRJP3 peptid to Bat peptide (see mrjp3prot.fas). They are a perfect match except for the lack of the C-terminal highly-repetitive end.
+I extract some of the results below. I also compared MRJP3 peptid to Bat peptide (see mrjp3prot.fas). They are a near-perfect match except for the lack of the C-terminal highly-repetitive end.
 
 
 
